@@ -1,5 +1,8 @@
-class puppet::profile::rvm inherits puppet::profile::params::rvm {
-  package { $rvm_packages:
+class puppet::profile::rvm {
+  package { ['make', 'libc6-dev', 'libreadline6-dev', 'zlib1g-dev',
+    'libssl-dev', 'libyaml-dev', 'libsqlite3-dev', 'sqlite3', 'autoconf',
+    'libgdbm-dev', 'libncurses5-dev', 'automake', 'libtool', 'bison',
+    'pkg-config', 'libffi-dev', 'gnupg2']:
     ensure => 'installed',
     before => Exec['install-rvm'],
   }

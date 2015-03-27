@@ -1,4 +1,4 @@
-class puppet::profile::nvm inherits puppet::profile::params::nvm {
+class puppet::profile::nvm {
   package { $nvm_packages:
     ensure => 'installed',
     before => Exec['install-nvm'],

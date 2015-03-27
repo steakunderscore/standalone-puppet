@@ -1,23 +1,19 @@
-# My Default profile, which is called regardless of host
-
-class puppet::profile::base inherits puppet::profile::base::params {
-  package { $base_packages:
-    ensure  => "installed",
-  }
-
+class puppet::profile::base {
   package { [
-             'i3',
-             'lm-sensors',
-             'docker',
-             'fail2ban',
-             'sshfs',
-             'build-essential',
-             'tree',
-             'keepassx',
-             'pidgin',
-             'pidgin-otr',
-            ]:
-    ensure  => "installed",
+    'puppet',
+    'vim',
+    'git',
+    'zsh',
+    'lm-sensors',
+    'docker',
+    'fail2ban',
+    'sshfs',
+    'build-essential',
+    'tree',
+    'keepassx',
+    'pidgin',
+    'pidgin-otr'
+  ]:
+    ensure  => "installed"
   }
-
 }
